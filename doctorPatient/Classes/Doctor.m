@@ -37,7 +37,7 @@
     return self.patientList;
 }
 
--(void) requestMedication {
+-(void) requestMedication: (Patient *) patient{
     NSLog(@"Patient asked for medication.");
 }
 

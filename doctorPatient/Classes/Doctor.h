@@ -29,7 +29,7 @@
 
 -(NSMutableArray *) seePatient: (Patient *) newPatient;
 
--(void) requestMedication;
+-(void) requestMedication: (Patient *) patient;
 
 
 @end

@@ -28,7 +28,7 @@ int main(int argc, const char * argv[]) {
         
         [dianna visitDoctor:alf hasValidHealthCard:NO];
         
-        [alf requestMedication];
+        [alf requestMedication: dianna];
 
         
         Patient *dave = [[Patient alloc] initWithName:@"Dave Holmes" age:42];
@@ -38,7 +38,7 @@ int main(int argc, const char * argv[]) {
         
         NSLog(@"Doctor %@, Current Patient List: %@", elvis.name, elvis.patientList[0]);
         
-        [elvis requestMedication];
+        [elvis requestMedication: dave];
         
         
         
