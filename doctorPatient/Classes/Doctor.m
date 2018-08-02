@@ -37,6 +37,11 @@
     return self.patientList;
 }
 
+-(void) requestMedication {
+    NSLog(@"Patient asked for medication.");
+}
+
+
 
 
 @end
