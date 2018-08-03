@@ -73,6 +73,14 @@
                 break;
         }
         patientRecord.patientSymptom = symptom;
+        // record isn't saving medical details; it's saving memory location OF record
+        // TEST: <PatientRecord: 0x100507ef0> (obvs, mem address changes with each runTest)
+        // basically the 'patientRecord' being passed; is only showing a memory address in debugger... and that's all it's spitting out when
+        // the NSLog is printed... upon looking at debugger... said mem location DOES have name/med/symp in it... so why only print mem address?
+        // took off componentsJoinedByString:@", "]... and shows array just filled with that mem address.. issue with 'saving' proper data.
+        
+        
+
         
         patient.medicalHistory = [patient.medicalHistory arrayByAddingObject:patientRecord];
         
