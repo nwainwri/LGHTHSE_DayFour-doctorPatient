@@ -37,9 +37,30 @@
     return self.patientList;
 }
 
--(void) requestMedication: (Patient *) patient{
+-(void) requestMedication: (Patient *) patient patientSymptoms: (NSString *) symptoms{
     NSLog(@"Patient asked for medication.");
+    // loop thru patient array, if find patient, then do...
+    
+    BOOL patientFound = NO;
+    
+    for (patient in self.patientList){
+        patientFound = YES;
+    }
+    if (patientFound == YES){
+        NSLog(@"Doctor Can Perscribe Medication.");
+    }
+    if (patientFound == NO) {
+        NSLog(@"Doctor Can't Perscribe Medication.");
+    }
+    
+    
+    
+    
+    
 }
+
+
+
 
 
 
