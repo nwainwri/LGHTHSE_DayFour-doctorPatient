@@ -9,11 +9,13 @@
 #import <Foundation/Foundation.h>
 //@class Doctor;
 #import "Doctor.h"
+#import "PatientRecord.h"
 
 @interface Patient : NSObject
 
 @property NSString *name;
 @property int age;
+@property NSArray *medicalHistory;
 
 - (instancetype)initWithName: (NSString *)name age: (int)howOld;
 

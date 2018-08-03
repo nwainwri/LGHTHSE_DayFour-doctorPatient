@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 @class Patient;
+@class PatientRecord;
 
 @protocol Doctor
 
@@ -37,7 +38,9 @@ typedef NS_ENUM(NSUInteger, PatientSymptom) {
 
 -(NSMutableArray *) seePatient: (Patient *) newPatient;
 
--(void) requestMedication: (Patient *) patient patientSymptoms: (PatientSymptom)symptom;
+-(PatientRecord *) requestMedication: (Patient *) patient patientSymptoms: (PatientSymptom)symptom;
+
+
 
 
 @end
