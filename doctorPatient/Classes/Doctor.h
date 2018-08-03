@@ -15,12 +15,20 @@
 
 @end
 
+typedef NS_ENUM(NSUInteger, PatientSymptom) {
+    PatientSymptomHeadache,
+    PatientSymptomSoreThroat,
+    PatientSymptomSoreNeck,
+};
 
 @interface Doctor : NSObject
 
 @property NSString *name;
 @property NSString *specialization;
 @property NSMutableArray *patientList;
+
+
+
 
 //- (instancetype)initWithName: (NSString*) name;
 - (instancetype)initWithName:(NSString *)name specialization:(NSString *)degree;
@@ -29,7 +37,7 @@
 
 -(NSMutableArray *) seePatient: (Patient *) newPatient;
 
--(void) requestMedication: (Patient *) patient patientSymptoms: (NSString *) symptoms;
+-(void) requestMedication: (Patient *) patient patientSymptoms: (PatientSymptom)symptom;
 
 
 @end

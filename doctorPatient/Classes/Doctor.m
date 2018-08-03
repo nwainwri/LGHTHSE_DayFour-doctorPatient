@@ -5,7 +5,6 @@
 //  Created by Nathan Wainwright on 2018-08-02.
 //  Copyright © 2018 Nathan Wainwright. All rights reserved.
 //
-
 #import "Doctor.h"
 @class Patient;
 
@@ -37,7 +36,7 @@
     return self.patientList;
 }
 
--(void) requestMedication: (Patient *) patient patientSymptoms: (NSString *) symptoms{
+-(void) requestMedication: (Patient *) patient patientSymptoms: (PatientSymptom)symptom{
     NSLog(@"Patient asked for medication.");
     // loop thru patient array, if find patient, then do...
     
@@ -48,10 +47,31 @@
     }
     if (patientFound == YES){
         NSLog(@"Doctor Can Perscribe Medication.");
+        switch (symptom) {
+            case PatientSymptomSoreThroat:
+                NSLog(@"HAVE: Salt Water");
+                break;
+            case PatientSymptomHeadache:
+                NSLog(@"HAVE: Tylenol");
+                break;
+                
+            case PatientSymptomSoreNeck:
+                NSLog(@"HAVE: Advil");
+                break;
+            default:
+                break;
+        }
+        
+        
+        
+        
+        
     }
     if (patientFound == NO) {
-        NSLog(@"Doctor Can't Perscribe Medication.");
+        NSLog(@"Doctor CAN'T Perscribe Medication.");
     }
+    
+    
     
     
     
