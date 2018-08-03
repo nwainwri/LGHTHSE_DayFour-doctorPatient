@@ -6,7 +6,7 @@
 //  Copyright © 2018 Nathan Wainwright. All rights reserved.
 //
 #import "Doctor.h"
-@class Patient;
+#import "Patient.h"
 #import "PatientRecord.h"
 
 @implementation Doctor
@@ -43,8 +43,10 @@
     
     BOOL patientFound = NO;
     
-    for (patient in self.patientList){
-        patientFound = YES;
+    for (Patient *p in self.patientList){
+        if (p == patient){
+            patientFound = YES;
+        }
     }
     if (patientFound == YES){
         NSLog(@"Doctor Can Perscribe Medication.");
@@ -58,15 +60,11 @@
             case PatientSymptomSoreThroat:
                 NSLog(@"HAVE: Salt Water");
                 patientRecord.medicationGiven = @"Salt Water";
-
                 break;
-                
             case PatientSymptomHeadache:
                 NSLog(@"HAVE: Tylenol");
                 patientRecord.medicationGiven = @"Tylenol";
-
                 break;
-                
             case PatientSymptomSoreNeck:
                 NSLog(@"HAVE: Advil");
                 patientRecord.medicationGiven = @"Advil";
@@ -76,7 +74,7 @@
         }
         patientRecord.patientSymptom = symptom;
         
-       
+        patient.medicalHistory = [patient.medicalHistory arrayByAddingObject:patientRecord];
         
         return patientRecord;
         

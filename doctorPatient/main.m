@@ -43,7 +43,7 @@ int main(int argc, const char * argv[]) {
         NSLog(@"Doctor %@, Current Patient List: %@", elvis.name, elvis.patientList[0]);
         [elvis requestMedication:dave patientSymptoms:PatientSymptomHeadache];
         
-        
+        NSLog(@"\n\nTEST: %@", [dave.medicalHistory componentsJoinedByString:@", "]);
         
         
         

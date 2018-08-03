@@ -18,6 +18,7 @@
     if (self) {
         _name = name;
         _age = howOld;
+        _medicalHistory = @[];
     }
     return self;
 }
@@ -30,7 +31,7 @@
         // this is where patient name will be added to an array for doctor to track patients
         // call method for doctor seeing patient
         
-        [doc seePatient: self.name];
+        [doc seePatient: self];
         
     } //YES
     
